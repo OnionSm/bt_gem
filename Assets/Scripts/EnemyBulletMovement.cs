@@ -25,6 +25,8 @@ public class EnemyBulletMovement : MonoBehaviour
     {
         this.my_plane_pos = EnemyPlane.Instance.my_plane_position;
         this.direction = this.my_plane_pos - transform.parent.position;
-        this.direction.Normalize();
+        Debug.Log("transform parent : " + transform.parent.position);
+        Debug.Log("Direction : " + direction);
+        
     }
 }

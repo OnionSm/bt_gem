@@ -30,7 +30,6 @@ public class DespawnByDistance : MonoBehaviour
     }
     protected bool CanDespawn()
     {
-        Debug.Log("Transform position : " + transform.position + "camera : " + this.main_camera.position);
         Vector3 main_camera_position = new Vector3(main_camera.position.x, main_camera.position.y, 0f);
         this.distance = Vector3.Distance(transform.position, main_camera_position);
         if (distance > distanceLimit)

@@ -9,18 +9,27 @@ public class PlayerMovement : MonoBehaviour
     
     void Start()
     {
-        
+        this.LoadComponent();
     }
 
-    
+
     void Update()
     {
         this.GetMousePositon();
         this.LookAtMouse();
         this.Move();
     }
+    protected void LoadComponent()
+    {
+        this.LoadPlayerPlane();
+    }
+    protected void LoadPlayerPlane()
+    {
+        transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y, 0f);
+    }
     protected void LookAtMouse()
     {
+
         Vector3 diff = this.mousePosition - transform.parent.position;
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
